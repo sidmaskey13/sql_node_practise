@@ -1,0 +1,106 @@
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>AppTest</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Report for Petroleum Products</h1>
+    <h5>Task:List average sale of each petroleum product for 2 years of interval</h5>
+<div class="table-responsive-sm">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Petroleum Name</th>
+                <th>Year</th>
+                <th>Average</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const Data of task1) { %>
+                <tr>
+                    <td>
+                        <%= Data.Name %>
+                    </td>
+                    <td>
+                        <%= Data.years %>
+                    </td>
+                    <% if(Data.Average_Sale==null){ %>
+                    <td>
+                        <%= 0%>
+                    </td>
+                    <% } else{ %>
+                        <td>
+                            <%= Data.Average_Sale%>
+                        </td>
+                        <% } %>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>
+<hr>
+<h5>Task:List overall sale of each petroleam product by country</h5>
+<div class="table-responsive-sm">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Petroleum Name</th>
+                <th>Country</th>
+                <th>Overall Sum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const Data of task2) { %>
+                <tr>
+                    <td>
+                        <%= Data.Name %>
+                    </td>
+<td>
+    <%= Data.Country %>
+</td>
+                        <td>
+                            <%= Data.Sum%>
+                        </td>
+
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>
+<hr>
+<h5>Task:At which year each petroleum product had the least sale. Note: Do not count zero as least sale</h5>
+<div class="table-responsive-sm">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Petroleum Name</th>
+                <th>Year</th>
+                <th>Minimum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const Data of task3) { %>
+                <tr>
+                    <td>
+                        <%= Data.Name %>
+                    </td>
+                    <td>
+                        <%= Data.Year %>
+                    </td>
+                    <td>
+                        <%= Data.Min%>
+                    </td>
+
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
